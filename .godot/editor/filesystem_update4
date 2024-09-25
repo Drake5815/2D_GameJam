@@ -1,0 +1,8 @@
+res://tscn/UI/MainMenu.tscn
+res://tscn/World/World.tscn
+res://tscn/World/Frog.tscn
+res://tscn/World/CharacterScript.gd
+res://tscn/UI/losing_scene.tscn
+res://tscn/UI/losing_scene.gd
+res://tscn/UI/main_menu.gd
+res://Code/scene_switcher.gd

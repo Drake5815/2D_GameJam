@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://br6shm35pdy0a"]
+
+[ext_resource type="Script" path="res://tscn/UI/main_menu.gd" id="1_vrink"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrink")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 537.5
+offset_top = 500.0
+offset_right = 742.5
+offset_bottom = 531.0
+action_mode = 0
+text = "Exit"
+
+[node name="How To PLay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 537.5
+offset_top = 460.0
+offset_right = 742.5
+offset_bottom = 491.0
+action_mode = 0
+text = "How To Play"
+
+[node name="Play Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 537.5
+offset_top = 420.0
+offset_right = 742.5
+offset_bottom = 451.0
+action_mode = 0
+text = "Play"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 31.0
+offset_right = 1010.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 100
+text = "Frog World
+* We nee a title"
+
+[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]

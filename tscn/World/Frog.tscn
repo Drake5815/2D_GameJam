@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnmgerh6wiva2"]
+
+[ext_resource type="Script" path="res://tscn/World/CharacterScript.gd" id="1_rlcyf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_73fv6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_mtdtl"]
+
+[node name="Frog" type="CharacterBody2D"]
+script = ExtResource("1_rlcyf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+zoom = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_73fv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(-4.76837e-07, 2.38419e-06)
+scale = Vector2(20.0227, 20)
+mesh = SubResource("SphereMesh_mtdtl")

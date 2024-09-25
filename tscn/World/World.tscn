@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtq6huvvdnowq"]
+
+[ext_resource type="PackedScene" uid="uid://cnmgerh6wiva2" path="res://tscn/World/Frog.tscn" id="1_e2uij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84qv4"]
+size = Vector2(20, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24sxb"]
+size = Vector2(10.9875, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nnv10"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy760"]
+size = Vector2(3.9625, 9.39999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eiaqv"]
+size = Vector2(20.2, 1)
+
+[node name="World" type="Node2D"]
+
+[node name="Platfrom" type="StaticBody2D" parent="."]
+position = Vector2(800, 669)
+scale = Vector2(80, 5)
+
+[node name="Tower" type="StaticBody2D" parent="Platfrom"]
+position = Vector2(6.225, -99.8)
+scale = Vector2(0.125, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfrom/Tower"]
+position = Vector2(0, 5.02)
+shape = SubResource("RectangleShape2D_84qv4")
+
+[node name="ColorRect" type="ColorRect" parent="Platfrom/Tower"]
+offset_left = -10.2
+offset_top = -9.92
+offset_right = 9.8
+offset_bottom = 10.08
+color = Color(0.854902, 0.721569, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfrom"]
+position = Vector2(-4.50625, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_24sxb")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platfrom"]
+position = Vector2(-0.0375, 0)
+scale = Vector2(20, 20)
+mesh = SubResource("BoxMesh_nnv10")
+
+[node name="Water" type="Area2D" parent="."]
+position = Vector2(800, 669)
+scale = Vector2(80, 5)
+
+[node name="ColorRect" type="ColorRect" parent="Water"]
+offset_left = 1.0
+offset_top = -9.99998
+offset_right = 5.0
+offset_bottom = -0.999985
+color = Color(0, 0, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+position = Vector2(2.98125, -5.7)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_yy760")
+
+[node name="Window" type="Area2D" parent="."]
+position = Vector2(1298, 170)
+scale = Vector2(10, 50)
+
+[node name="Window2" type="ColorRect" parent="Window"]
+offset_left = -10.0
+offset_top = -1.0
+offset_right = 9.99998
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
+position = Vector2(-0.100006, -0.500001)
+shape = SubResource("RectangleShape2D_eiaqv")
+
+[node name="Frog" parent="." instance=ExtResource("1_e2uij")]
+position = Vector2(11, 598)
+
+[connection signal="body_entered" from="Water" to="Frog" method="_on_water_body_entered"]
+[connection signal="body_entered" from="Window" to="Frog" method="_on_window_body_entered"]
