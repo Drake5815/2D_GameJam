@@ -48,4 +48,5 @@ theme_override_font_sizes/font_size = 100
 text = "Frog World
 * We nee a title"
 
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]

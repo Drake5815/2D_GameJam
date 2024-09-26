@@ -19,6 +19,7 @@ offset_right = 1292.0
 offset_bottom = 736.0
 
 [node name="Play Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 537.5
 offset_top = 344.5
 offset_right = 742.5

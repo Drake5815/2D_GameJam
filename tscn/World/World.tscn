@@ -39,7 +39,6 @@ color = Color(0.854902, 0.721569, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platfrom"]
 position = Vector2(-4.50625, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_24sxb")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Platfrom"]
@@ -61,7 +60,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
 position = Vector2(2.98125, -5.7)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yy760")
 
 [node name="Window" type="Area2D" parent="."]
